@@ -1,0 +1,66 @@
+{
+    "name": "apex/audit",
+    "type": "laravel-package",
+    "description": "Enterprise-grade audit trail package for Laravel applications with forensic-level integrity",
+    "keywords": [
+        "laravel",
+        "audit",
+        "audit-trail",
+        "forensic",
+        "security",
+        "history",
+        "rollback",
+        "digital-signature",
+        "enterprise"
+    ],
+    "homepage": "https://github.com/your-org/apex-audit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EXOR Group",
+            "email": "support@exorgroup.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apex\\Audit\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apex\\Audit\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test-coverage": "pest --coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apex\\Audit\\AuditServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
